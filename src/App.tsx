@@ -1,9 +1,10 @@
 import Object from "./components/Object";
-
+import TestObj from "./components/TestObject/TestObj";
 function App() {
   return (
-    <main className="bg-transparent	 w-screen flex justify-center items-cente border-8">
+    <main className="bg-transparent	w-full	h-full border-8">
       <Object />
+      <TestObj />
     </main>
   );
 }

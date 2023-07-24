@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Mesh } from "three";
 import { Stars, OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
@@ -16,7 +16,8 @@ const Object = () => {
       <ambientLight intensity={0.1} />
       <mesh ref={mesh}>
         <boxGeometry args={[5, 5, 5]} />
-        <meshStandardMaterial color="green" />
+        {/* meshMetarial에 따라서 원하는 색이 안 나올 수도 있음 아마 light와 관련된듯! */}
+        <meshPhysicalMaterial color={"blue"} />
       </mesh>
       <OrbitControls />
       <Stars />

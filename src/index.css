@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 아래와 같이 css를 적용할 수도 있고 */
+@layer base {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid black;
+
+    /* apply를 통해 css가 아닌 그냥 tailwind 문법을 사용할 수도 있다. */
+    @apply bg-slate-800;
+  }
+}
