@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { MeshBasicMaterial } from "three";
+import { MeshBasicMaterial, MeshNormalMaterial, MeshPhongMaterial,MeshStandardMaterial} from "three";
 
 interface PolyhedronProps {
   name?: string;
   position?: [number, number, number];
-  material?: MeshBasicMaterial;
+  material?: MeshBasicMaterial | MeshNormalMaterial |MeshPhongMaterial | MeshStandardMaterial;
 }
 
 function PolyHedron({ ...props }: PolyhedronProps) {
