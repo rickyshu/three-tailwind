@@ -13,7 +13,7 @@ const TestObj = () => {
   //6. MeshStandardMatarial:-Shading은 Phong음영 모델을 사용 MeshPhongMaterial과 동일 ( 픽셀마다 음영 계산 )
   //7. MeshPhysicalMaterial : 반사성을 더 조절할 수 있는 MeshStandardMaterial의 확장,
 
-  //여러 광원을 혼합해서 사용하는 것도 보인다(이유를 모르겠음)
+  //여러 광원을 혼합해서 사용하는 것도 보인다(이유를 모르겠음) => 혼합함에 다양한 음영을 만들 수 있다.
 
   //1.AmbientLight: 빛의 시작점이 없이 물체의 모든 면을 골고루 비춰주는 빛이다. (color, intensity(빛의 강도))
   //2.DirectionalLight: 태양과 같이 무한대의 먼 거리에서 모든 물체에 같은 각도로 비추는 빛이다.
@@ -25,7 +25,7 @@ const TestObj = () => {
       {/* pointLight 단순히 물체에만 적용이 되고 배경에는 상관이 없는듯(아마 추가 설정으로 할 수 있을 것이다.) */}
       {/* light를 두 개로 하니까 조금 더 밝아 진다. */}
       <pointLight position={[1, 1, 1]} />
-      <ambientLight/>
+      <ambientLight />
       {/* 아래 Box mesh는 보통 따로 component로 빼는듯 하다.*/}
       {/* 좌표값을 다르게 해야 다른 위치로 보이는 데 공식문서는 왜 그럼? */}
       <Box position={[-1.2, 1, 1]} />

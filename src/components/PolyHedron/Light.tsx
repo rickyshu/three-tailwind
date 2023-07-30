@@ -4,6 +4,7 @@ import {
   DirectionalLight,
   PointLight,
   SpotLight,
+  RectAreaLight,
   Vector3, //타입을 적용하려고 했는데 잘 안 되네? 추가적으로 더 찾아봐야 할 것 같다
 } from "three";
 //. leva는 Three.js와 같은 라이브러리에서 주로 사용하는 시각적인 인터페이스(GUI)를 제공하여 오브젝트
@@ -18,6 +19,7 @@ function Lights() {
   const directionalRef = useRef<DirectionalLight>(null!);
   const pointRef = useRef<PointLight>(null!);
   const spotRef = useRef<SpotLight>(null!);
+  const recRef = useRef<RectAreaLight>(null!);
 
   useControls("Ambient Light", {
     visible: {
@@ -81,12 +83,28 @@ function Lights() {
     },
   });
 
+  useControls("RectAreaLight", {
+    visible: {
+      value: false,
+      onChange: (v: boolean) => {
+        spotRef.current.visible = v;
+      },
+    },
+    color: {
+      value: "white",
+      onChange: (v: string) => {
+        spotRef.current.color = new THREE.Color(v);
+      },
+    },
+  });
+
   return (
     <>
       <ambientLight ref={ambientRef} />
       <directionalLight ref={directionalRef} />
       <pointLight ref={pointRef} />
       <spotLight ref={spotRef} />
+      <rectAreaLight ref={recRef} />
     </>
   );
 }
